@@ -14,10 +14,10 @@ struct ChallengeFavorRow : View{
         HStack{
             Text(challenge.title)
             Spacer()
-            Image(systemName: challenge.isFavorite ? "star.fill" : "star")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(.green)
+//            Image(systemName: challenge.isFavorite ? "star.fill" : "star")
+//                .resizable()
+//                .frame(width: 30, height: 30)
+//                .foregroundColor(.green)
         }
     }
 }

@@ -9,14 +9,7 @@ import Foundation
 
 struct EnvelopeModel{
     
-    var content: String
     var isClicked: Bool = false
-    
-    init(){
-        content = "content" // DB 연동
-    }
-    
-   
     
     mutating func firstClick(){
         self.isClicked = !self.isClicked

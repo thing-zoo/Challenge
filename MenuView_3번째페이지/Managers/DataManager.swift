@@ -21,13 +21,13 @@ class DataManager {
     private init() {
         //실행시 데이터가 나타나는 것을 보고 싶다면 주석 처리 지울것
         //preivew는 MockDataManager가 있기 때문에 보이는 것임.
-//        challenges = [
-//            Challenge(id: UUID(), title: "하늘 사진 찍기", isFavorite: true),
-//            Challenge(id: UUID(), title: "운동 1시간 하기", isFavorite: false),
-//            Challenge(id: UUID(), title: "책 1챕터 읽기", isFavorite: false),
-//            Challenge(id: UUID(), title: "달 사진 찍기", isFavorite: true),
-//            Challenge(id: UUID(), title: "일찍 일어나기", isFavorite: true),
-//        ]
+        challenges = [
+            Challenge(id: UUID(), title: "하늘 사진 찍기", isFavorite: true),
+            Challenge(id: UUID(), title: "운동 1시간 하기", isFavorite: false),
+            Challenge(id: UUID(), title: "책 1챕터 읽기", isFavorite: false),
+            Challenge(id: UUID(), title: "달 사진 찍기", isFavorite: true),
+            Challenge(id: UUID(), title: "일찍 일어나기", isFavorite: true),
+        ]
     }
 }
 

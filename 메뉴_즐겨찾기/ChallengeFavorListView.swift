@@ -19,14 +19,26 @@ struct ChallengeFavorListView: View {
         }
     }
 
-    var body: some View{
-        List(viewModel.challenges){ challenge in
-            Button(action: {
-                self.viewModel.toggleIsFavorite(for: challenge)
-                }) {
-                    ChallengeFavorRow(challenge: challenge)
+    var body: some View {
+        NavigationView {
+            List(viewModel.challenges){ challenge in
+                NavigationLink(destination: SetFavoriteView()) {
+                    HStack{
+                        ChallengeFavorRow(challenge: challenge)
+                        Button(action: {
+                            self.viewModel.toggleIsFavorite(for: challenge)
+                        }) {
+                            Image(systemName: challenge.isFavorite ? "star.fill" : "star")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.green)
+                        }
+                    }
                 }
+            }
+            .navigationBarHidden(true)
         }
+        .padding(0.0)
         .navigationBarItems(trailing: addNewButton)
         .sheet(isPresented: $isShowingAddNew, onDismiss: {
             self.viewModel.fetchChallenges()
@@ -36,6 +48,7 @@ struct ChallengeFavorListView: View {
         .onAppear{
             self.viewModel.fetchChallenges()
         }
+
     }
 }
 

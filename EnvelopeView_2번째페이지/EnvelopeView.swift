@@ -14,7 +14,7 @@ struct EnvelopeView: View {
     
     var body: some View{
         if viewModel.isItClicked() {
-            Text("challenge")
+            Text(viewModel.contentOfChallenge())
                 .font(Font.largeTitle)
                 .padding(15)
         } else {
