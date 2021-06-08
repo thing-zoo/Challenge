@@ -59,8 +59,8 @@
 		2DBE3CC0266F903700A12E71 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		2DBE3CC1266F903700A12E71 /* ChallengeFavorRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFavorRow.swift; sourceTree = "<group>"; };
 		2DBE3CC2266F903700A12E71 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		C4A3B71283CD2BFA0060AF4A /* Pods-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Challenge/Pods-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
-		D86B4F527215D7EEE0781366 /* Pods-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge.release.xcconfig"; path = "Target Support Files/Pods-Challenge/Pods-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		4AEB01772FE295162E44E897 /* Pods-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge.release.xcconfig"; path = "Target Support Files/Pods-Challenge/Pods-Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		C313DD5818D8F2B7A668B55E /* Pods-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Challenge/Pods-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		F4BCF4E2266F95CB001B4B98 /* SwiperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiperView.swift; sourceTree = "<group>"; };
 		F4BCF4E4266F95CB001B4B98 /* SwiperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiperModel.swift; sourceTree = "<group>"; };
 		F4BCF4EA266F95DA001B4B98 /* EnvelopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvelopModel.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 				2DBE3CA6266F902900A12E71 /* 메뉴_커뮤니티 */,
 				2DBE3C43266F8DB700A12E71 /* Challenge */,
 				2DBE3C42266F8DB700A12E71 /* Products */,
-				5347FC7F50964E8CE7FA9EEE /* Pods */,
 				A6F589525E64E845770ADF8D /* Frameworks */,
+				B0491C14D843FDCAEC1A7525 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,21 +202,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5347FC7F50964E8CE7FA9EEE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C4A3B71283CD2BFA0060AF4A /* Pods-Challenge.debug.xcconfig */,
-				D86B4F527215D7EEE0781366 /* Pods-Challenge.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		A6F589525E64E845770ADF8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				165E7464A65024B7E23F6FF1 /* Pods_Challenge.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0491C14D843FDCAEC1A7525 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C313DD5818D8F2B7A668B55E /* Pods-Challenge.debug.xcconfig */,
+				4AEB01772FE295162E44E897 /* Pods-Challenge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F4BCF4E0266F95CB001B4B98 /* SwiperView_3개페이지연결 */ = {
@@ -519,7 +520,7 @@
 		};
 		2DBE3C56266F8DBC00A12E71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4A3B71283CD2BFA0060AF4A /* Pods-Challenge.debug.xcconfig */;
+			baseConfigurationReference = C313DD5818D8F2B7A668B55E /* Pods-Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -541,7 +542,7 @@
 		};
 		2DBE3C57266F8DBC00A12E71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D86B4F527215D7EEE0781366 /* Pods-Challenge.release.xcconfig */;
+			baseConfigurationReference = 4AEB01772FE295162E44E897 /* Pods-Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
