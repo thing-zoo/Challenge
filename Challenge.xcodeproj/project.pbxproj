@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294D3D4A23F7E0D5D1C9C344 /* Pods_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6787117F09AFA769CAB15A6 /* Pods_Challenge.framework */; };
 		2DBE3C45266F8DB700A12E71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE3C44266F8DB700A12E71 /* AppDelegate.swift */; };
 		2DBE3C47266F8DB700A12E71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE3C46266F8DB700A12E71 /* SceneDelegate.swift */; };
 		2DBE3C4B266F8DBC00A12E71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE3C4A266F8DBC00A12E71 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		F419C81B26747B3900843DE4 /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		F6787117F09AFA769CAB15A6 /* Pods_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +73,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294D3D4A23F7E0D5D1C9C344 /* Pods_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BFA109389BCFE97C4D4534A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6787117F09AFA769CAB15A6 /* Pods_Challenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2DBE3C38266F8DB700A12E71 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +100,7 @@
 				2DBE3C43266F8DB700A12E71 /* Challenge */,
 				2DBE3C42266F8DB700A12E71 /* Products */,
 				B0491C14D843FDCAEC1A7525 /* Pods */,
+				0BFA109389BCFE97C4D4534A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

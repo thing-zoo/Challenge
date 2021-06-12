@@ -43,18 +43,6 @@ struct SlideMenuView: View {
     }
 }
 
-struct ChallengeContentView: View {
-    
-    var content: String
-    
-    init(_ cont:String){
-        self.content = cont
-    }
-    var body: some View {
-        Text(content)
-    }
-}
-
 struct EnvelopeView:View {
     var viewModel: MainViewModel
     init(_ viewModel: MainViewModel){
@@ -84,30 +72,27 @@ struct EnvelopeOpenView: View {
 
     var body: some View{
         let content = viewModel.daily
-        
+        let width = UIScreen.main.bounds.width
+
         ZStack{
-            Image(systemName: "heart.fill")
-                .font(.system(size:80))
-                .foregroundColor(Color.pink)
-                .rotationEffect(.degrees(180))
-                .offset(CGSize(width: 0.0, height: -125.0))
-            MomentumArrow()
-                .fill(Color(UIColor.lightGray))
-            RoundedRectangle(cornerRadius: 10.0)
-                .fill(Color(red: 0.96, green: 0.96, blue: 0.96))
-                .frame(width: 180, height: 140)
-                .offset(CGSize(width: 0.0, height: 30.0))
+            Image("envelope")
+                .resizable()
+                .frame(width: width*0.6, height: width*0.9, alignment: .center)
+            
             VStack{
                 ZStack{
                     Text(content)
                         .font(Font.largeTitle)
                         .padding(30)
+                        .offset(x: 0.0, y: width*0.1)
+                        .minimumScaleFactor(0.5)
                     
                     if complete{
                         Image("good")
                             .resizable()
-                            .frame(width: 80, height: 80)
+                            .frame(width: width*0.4, height: width*0.4)
                             .opacity(0.9)
+                            .offset(x: 0.0, y: width*0.1)
                     }
                     
                 }
@@ -120,11 +105,10 @@ struct EnvelopeOpenView: View {
                         }
                     }, label: {
                         HStack{
-                            Text("즐겨찾기").minimumScaleFactor(0.5)
+                            Text("즐겨찾기")
                             Image(systemName: addFavor ? "star.fill" : "star")
                         }
                     })
-                    .padding(5)
                     
                     
                     Button(action: {
@@ -132,8 +116,8 @@ struct EnvelopeOpenView: View {
                     }, label: {
                         Text("완료하기")
                     })
-                    .padding(5)
                 }
+                .minimumScaleFactor(0.5)
             }
             .navigationTitle("일상챌린지")
             .navigationBarTitle("Back")
@@ -144,40 +128,25 @@ struct EnvelopeOpenView: View {
 }
 
 struct ButtonBack: View {
+    
     var body: some View{
+        let swidth = UIScreen.main.bounds.width/2
+        let w = CGFloat(swidth*0.6)
+        let h = CGFloat(swidth*0.6)
         ZStack{
             RoundedRectangle(cornerRadius: 10.0)
                 .fill(Color.gray)
-                .frame(width: 200, height: 150)
+                .frame(width: w, height: h)
             Image(systemName: "heart.fill")
-                .font(.system(size:80))
+                .font(.system(size:w*0.4))
                 .foregroundColor(Color.pink)
         }
     }
 }
 
-struct MomentumArrow: Shape {
 
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        let swidth = UIScreen.main.bounds.width/2
-        let sheight = UIScreen.main.bounds.height/2
-        let w = CGFloat(100.0)
-        let h = CGFloat(75.0)
-// Triangle
-        path.move(to: CGPoint(x: swidth-w, y: sheight-h))
-        path.addLine(to: CGPoint(x: swidth, y: sheight-2*h))
-        path.addLine(to: CGPoint(x: swidth+w, y: sheight-h))
-
-        // Rect
-        path.move(to: CGPoint(x: swidth-w, y: sheight-h))
-        path.addLine(to: CGPoint(x: swidth-w, y: sheight+h))
-        path.addLine(to: CGPoint(x: swidth+w, y: sheight+h))
-        path.addLine(to: CGPoint(x: swidth+w, y: sheight-h))
-        path.addLine(to: CGPoint(x: swidth-w, y: sheight-h))
-        
-        return path
+struct EnvelopeOpenView_Previews: PreviewProvider {
+    static var previews: some View {
+        EnvelopeOpenView(MainViewModel())
     }
-    
 }
