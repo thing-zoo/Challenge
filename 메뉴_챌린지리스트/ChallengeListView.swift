@@ -13,6 +13,8 @@ struct ChallengeListView: View {
     var body: some View{
         List(viewModel.challenges){ challenge in
             Text(challenge.title)
+        }.onAppear{
+            self.viewModel.fetchChallenges()
         }
     }
 }

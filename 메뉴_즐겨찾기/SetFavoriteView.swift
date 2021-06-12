@@ -29,7 +29,7 @@ struct SetFavoriteView: View {
             DatePicker("알림 시간 선택", selection: $alertTime, displayedComponents: .hourAndMinute)
             Button(action: {
                 viewModel.setDate(for: challenge, begin: begin, end: endDate, alert: alertTime)
-            }) {Text("저장")}
+            }, label: {Text("저장")})
         }
         
     }

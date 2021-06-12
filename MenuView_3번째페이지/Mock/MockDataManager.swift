@@ -55,7 +55,9 @@ extension MockDataManager: DataManagerProtocol {
             return
         }
     }
-
+    func addChallenge(challenge : Challenge){
+        beingChallenges.insert(challenge, at: 0)
+    }
     func toggleIsFavorite(for challenge: Challenge) {
         if let index = favorChallenges.firstIndex(where: { $0.id == challenge.id }){
             favorChallenges.remove(at: index)
@@ -63,10 +65,7 @@ extension MockDataManager: DataManagerProtocol {
     }
     
     func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
-        if let index = challenges.firstIndex(where: {$0.id == challenge.id}) {
-            challenges[index].beginDate = begin
-            challenges[index].endDate = end
-            challenges[index].alert = alert
-        }
+        let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end, alert: alert)
+        addChallenge(challenge: ch)
     }
 }
