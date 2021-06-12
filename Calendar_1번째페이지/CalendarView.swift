@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CalendarView.swift
 //  swiftUI_calendar
 //
 //  Created by 박다민 on 2021/05/24.
@@ -8,34 +8,37 @@
 
 import SwiftUI
 
+class selectUserDate : ObservableObject {
+    @Published var selectDate: Date = Date()
+}
 
 struct CalendarView: View {
+//    @ObservedObject var select: selectUserDate
+    var selectDate: Date = Date()
     
+    @ObservedObject var viewModel = ChallengeListViewModel()
+    @State var date_challenge : [Challenge]?
+//    var calendar_model = CalendarModel(selectedDate: $userData.date)
     var body : some View {
-        VStack{
-            Calendar()
+        VStack {
+            CalendarModel(date_challenge: $date_challenge)
             HStack{
                 //List 삽입
-                List{
-                    test_challenge(name: "밤 하늘 촬영하기")
-                    test_challenge(name: "책 한 권 읽기")
-                    test_challenge(name: "아침 일찍 기상하기")
+                List(date_challenge ?? viewModel.challenges){ challenge in
+                    Text(challenge.title)
                 }
             }
         }
     }
+    
+    init() {
+        date_challenge = [Challenge]()
+    }
+    
 }
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()
-    }
-}
-
-struct test_challenge: View {
-    var name: String
-    
-    var body: some View {
-        Text("\(name)")
     }
 }
