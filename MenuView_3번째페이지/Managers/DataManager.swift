@@ -11,7 +11,7 @@ protocol DataManagerProtocol {
     func fetchChallengeList(status:Int) -> [Challenge]
     func addChallenge(title: String, status: Int)
     func toggleIsFavorite(for challenge: Challenge)
-    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date)
+    func setDate(for challenge: Challenge, begin: Date, end: Date)
 }
 
 class DataManager {
@@ -69,8 +69,8 @@ extension DataManager: DataManagerProtocol {
         }
     }
     
-    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
-        let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end, alert: alert)
+    func setDate(for challenge: Challenge, begin: Date, end: Date) {
+        let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end)
         addChallenge(challenge: ch)
     }
 }

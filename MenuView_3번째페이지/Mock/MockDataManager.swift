@@ -64,8 +64,8 @@ extension MockDataManager: DataManagerProtocol {
         }
     }
     
-    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
-        let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end, alert: alert)
+    func setDate(for challenge: Challenge, begin: Date, end: Date) {
+        let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end)
         addChallenge(challenge: ch)
     }
 }

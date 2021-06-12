@@ -14,5 +14,5 @@ struct Challenge:Identifiable{
     //var inProgress = false
     var beginDate = Date()
     var endDate = Date()
-    var alert = Date()
+    var alert = false
 }
