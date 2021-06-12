@@ -32,7 +32,6 @@
 		F419C81A26746FB100843DE4 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81626746FB100843DE4 /* SubView.swift */; };
 		F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */; };
 		F4BCF4F4266F95DF001B4B98 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F2266F95DF001B4B98 /* Calendar.swift */; };
-		F4C6DA25266FA9430061A6CA /* SetFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +64,6 @@
 		F419C81626746FB100843DE4 /* SubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +145,6 @@
 			children = (
 				2DBE3CB1266F903300A12E71 /* ChallengeFavorListView.swift */,
 				2DBE3CB2266F903300A12E71 /* ChallengeFavorListViewModel.swift */,
-				F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */,
 			);
 			path = "메뉴_즐겨찾기";
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				F4BCF4F4266F95DF001B4B98 /* Calendar.swift in Sources */,
 				2DBE3CC3266F903700A12E71 /* MockDataManager.swift in Sources */,
 				2DBE3CC7266F903700A12E71 /* NewChallengeViewModel.swift in Sources */,
-				F4C6DA25266FA9430061A6CA /* SetFavoriteView.swift in Sources */,
 				2DBE3CC5266F903700A12E71 /* KeyboardResponder.swift in Sources */,
 				2DBE3CB3266F903300A12E71 /* ChallengeFavorListView.swift in Sources */,
 				2DBE3C45266F8DB700A12E71 /* AppDelegate.swift in Sources */,
