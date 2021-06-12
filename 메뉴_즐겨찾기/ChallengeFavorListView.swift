@@ -10,6 +10,7 @@ import SwiftUI
 struct ChallengeFavorListView: View {
     @ObservedObject var viewModel = ChallengeFavorListViewModel()
     @State private var isShowingAddNew = false
+    @State private var isShowingSet = false
     
     private var addNewButton: some View {
         Button(action: {
@@ -21,7 +22,9 @@ struct ChallengeFavorListView: View {
     
     var body: some View {
         List(viewModel.challenges){ challenge in
-            NavigationLink(destination: SetFavoriteView(challenge: challenge)) {
+            Button(action: {
+                isShowingSet = true
+            }) {
                 HStack{
                     ChallengeFavorRow(challenge: challenge)
                     Button(action: {
@@ -32,6 +35,10 @@ struct ChallengeFavorListView: View {
                             .frame(width: 30, height: 30)
                             .foregroundColor(.green)
                     }
+
+                }
+                .sheet(isPresented: $isShowingSet) {
+                    SetFavoriteView(challenge: challenge, isShowingSet: $isShowingSet)
                 }
             }
         }
