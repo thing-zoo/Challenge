@@ -11,6 +11,7 @@ protocol DataManagerProtocol {
     func fetchChallengeList(includingFavorite: Bool) -> [Challenge]
     func addChallenge(title: String, isFavorite:Bool)
     func toggleIsFavorite(for challenge: Challenge)
+    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date)
 }
 
 class DataManager {
@@ -47,6 +48,14 @@ extension DataManager: DataManagerProtocol {
     func toggleIsFavorite(for challenge: Challenge) {
         if let index = challenges.firstIndex(where: { $0.id == challenge.id }){
             challenges[index].isFavorite.toggle()
+        }
+    }
+    
+    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
+        if let index = challenges.firstIndex(where: {$0.id == challenge.id}) {
+            challenges[index].beginDate = begin
+            challenges[index].endDate = end
+            challenges[index].alert = alert
         }
     }
 }

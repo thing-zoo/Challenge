@@ -25,18 +25,16 @@
 		2DBE3CC8266F903700A12E71 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE3CC0266F903700A12E71 /* Challenge.swift */; };
 		2DBE3CC9266F903700A12E71 /* ChallengeFavorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE3CC1266F903700A12E71 /* ChallengeFavorRow.swift */; };
 		2DBE3CCA266F903700A12E71 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE3CC2266F903700A12E71 /* MenuView.swift */; };
-		3E97D1DD38EA1531EB6E3433 /* Pods_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165E7464A65024B7E23F6FF1 /* Pods_Challenge.framework */; };
 		F419C81726746FB100843DE4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81326746FB100843DE4 /* MainViewModel.swift */; };
 		F419C81826746FB100843DE4 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81426746FB100843DE4 /* MainModel.swift */; };
 		F419C81926746FB100843DE4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81526746FB100843DE4 /* MainView.swift */; };
 		F419C81A26746FB100843DE4 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81626746FB100843DE4 /* SubView.swift */; };
+		F419C81C26747B3900843DE4 /* SetFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81B26747B3900843DE4 /* SetFavoriteView.swift */; };
 		F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */; };
 		F4BCF4F4266F95DF001B4B98 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F2266F95DF001B4B98 /* Calendar.swift */; };
-		F4C6DA25266FA9430061A6CA /* SetFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		165E7464A65024B7E23F6FF1 /* Pods_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBE3C41266F8DB700A12E71 /* Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBE3C44266F8DB700A12E71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DBE3C46266F8DB700A12E71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +61,9 @@
 		F419C81426746FB100843DE4 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		F419C81526746FB100843DE4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F419C81626746FB100843DE4 /* SubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		F419C81B26747B3900843DE4 /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E97D1DD38EA1531EB6E3433 /* Pods_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +88,6 @@
 				2DBE3CA6266F902900A12E71 /* 메뉴_커뮤니티 */,
 				2DBE3C43266F8DB700A12E71 /* Challenge */,
 				2DBE3C42266F8DB700A12E71 /* Products */,
-				A6F589525E64E845770ADF8D /* Frameworks */,
 				B0491C14D843FDCAEC1A7525 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -147,7 +143,7 @@
 			children = (
 				2DBE3CB1266F903300A12E71 /* ChallengeFavorListView.swift */,
 				2DBE3CB2266F903300A12E71 /* ChallengeFavorListViewModel.swift */,
-				F4C6DA24266FA9430061A6CA /* SetFavoriteView.swift */,
+				F419C81B26747B3900843DE4 /* SetFavoriteView.swift */,
 			);
 			path = "메뉴_즐겨찾기";
 			sourceTree = "<group>";
@@ -197,14 +193,6 @@
 				2DBE3CC1266F903700A12E71 /* ChallengeFavorRow.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A6F589525E64E845770ADF8D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				165E7464A65024B7E23F6FF1 /* Pods_Challenge.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B0491C14D843FDCAEC1A7525 /* Pods */ = {
@@ -353,12 +341,12 @@
 				2DBE3CAE266F903000A12E71 /* ChallengeListView.swift in Sources */,
 				F419C81926746FB100843DE4 /* MainView.swift in Sources */,
 				F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */,
+				F419C81C26747B3900843DE4 /* SetFavoriteView.swift in Sources */,
 				F419C81826746FB100843DE4 /* MainModel.swift in Sources */,
 				2DBE3CC4266F903700A12E71 /* DataManager.swift in Sources */,
 				F4BCF4F4266F95DF001B4B98 /* Calendar.swift in Sources */,
 				2DBE3CC3266F903700A12E71 /* MockDataManager.swift in Sources */,
 				2DBE3CC7266F903700A12E71 /* NewChallengeViewModel.swift in Sources */,
-				F4C6DA25266FA9430061A6CA /* SetFavoriteView.swift in Sources */,
 				2DBE3CC5266F903700A12E71 /* KeyboardResponder.swift in Sources */,
 				2DBE3CB3266F903300A12E71 /* ChallengeFavorListView.swift in Sources */,
 				2DBE3C45266F8DB700A12E71 /* AppDelegate.swift in Sources */,

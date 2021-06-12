@@ -12,7 +12,7 @@ struct Challenge:Identifiable{
     var title : String
     var isFavorite = false
     //var inProgress = false
-    //var startDate : Date
-    //var finishDate : Date
-    //var alarm : ??????time을 써야하나?
+    var beginDate = Date()
+    var endDate = Date()
+    var alert = Date()
 }

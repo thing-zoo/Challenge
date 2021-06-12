@@ -40,4 +40,12 @@ extension MockDataManager: DataManagerProtocol {
             challenges[index].isFavorite.toggle()
         }
     }
+    
+    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
+        if let index = challenges.firstIndex(where: {$0.id == challenge.id}) {
+            challenges[index].beginDate = begin
+            challenges[index].endDate = end
+            challenges[index].alert = alert
+        }
+    }
 }
