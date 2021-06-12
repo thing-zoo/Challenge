@@ -28,9 +28,9 @@ struct MainView: View {
                     if viewModel.isItClicked() {
                         //ChallengeContentView(viewModel.contentOfChallenge())
                         EnvelopeOpenView(self.viewModel)
-//                            .frame(width: geometry.size.width, height: geometry.size.height)
-//                            .offset(x: self.showMenu ? -geometry.size.width/2 : 0)
-//                            .disabled(self.showMenu ? true : false)
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .offset(x: self.showMenu ? -geometry.size.width/2 : 0)
+                            .disabled(self.showMenu ? true : false)
 
                     } else {
                         EnvelopeView(self.viewModel)

@@ -85,14 +85,14 @@ struct EnvelopeOpenView: View {
                         .font(Font.largeTitle)
                         .padding(30)
                         .offset(x: 0.0, y: width*0.1)
-                        .minimumScaleFactor(0.5)
+                        
                     
                     if complete{
                         Image("good")
                             .resizable()
-                            .frame(width: width*0.4, height: width*0.4)
+                            .frame(width: width*0.3, height: width*0.3)
                             .opacity(0.9)
-                            .offset(x: 0.0, y: width*0.1)
+                            .offset(x: 0, y: width*0.1)
                     }
                     
                 }
@@ -130,7 +130,7 @@ struct EnvelopeOpenView: View {
 struct ButtonBack: View {
     
     var body: some View{
-        let swidth = UIScreen.main.bounds.width/2
+        let swidth = UIScreen.main.bounds.width
         let w = CGFloat(swidth*0.6)
         let h = CGFloat(swidth*0.6)
         ZStack{
