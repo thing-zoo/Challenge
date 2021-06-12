@@ -26,18 +26,18 @@ struct MainView: View {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     if viewModel.isItClicked() {
-                        ChallengeContentView(viewModel.contentOfChallenge())
-                            .frame(width: geometry.size.width, height: geometry.size.height)
-                            .offset(x: self.showMenu ? -geometry.size.width/2 : 0)
-                            .disabled(self.showMenu ? true : false)
-                        
+                        //ChallengeContentView(viewModel.contentOfChallenge())
+                        EnvelopeOpenView(self.viewModel)
+//                            .frame(width: geometry.size.width, height: geometry.size.height)
+//                            .offset(x: self.showMenu ? -geometry.size.width/2 : 0)
+//                            .disabled(self.showMenu ? true : false)
+
                     } else {
                         EnvelopeView(self.viewModel)
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .offset(x: self.showMenu ? -geometry.size.width/2 : 0)
                             .disabled(self.showMenu ? true : false)
                     }
-                    
                     if self.showMenu {
                         SlideMenuView()
                             .navigationTitle("menu")

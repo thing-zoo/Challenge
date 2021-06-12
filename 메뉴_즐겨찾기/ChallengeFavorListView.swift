@@ -27,7 +27,7 @@ struct ChallengeFavorListView: View {
                     Button(action: {
                         self.viewModel.toggleIsFavorite(for: challenge)
                     }) {
-                        Image(systemName: challenge.isFavorite ? "star.fill" : "star")
+                        Image(systemName: "star.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.green)

@@ -12,7 +12,7 @@ protocol ChallengeListViewModelProtocol {
     var challenges: [Challenge] {get}
     var showFavorite: Bool {get set}
     func fetchChallenges()
-    func toggleIsFavorite(for challenge: Challenge)
+//    func toggleIsFavorite(for challenge: Challenge)
     
 }
 
@@ -30,11 +30,11 @@ final class ChallengeListViewModel: ObservableObject{
 
 extension ChallengeListViewModel: ChallengeListViewModelProtocol{
     func fetchChallenges() {
-        challenges = dataManager.fetchChallengeList(includingFavorite: showFavorite)
+        challenges = dataManager.fetchChallengeList(status: 1)
     }
     
-    func toggleIsFavorite(for challenge: Challenge) {
-        dataManager.toggleIsFavorite(for: challenge)
-        fetchChallenges()
-    }
+//    func toggleIsFavorite(for challenge: Challenge) {
+//        dataManager.toggleIsFavorite(for: challenge)
+//        fetchChallenges()
+//    }
 }
