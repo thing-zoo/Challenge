@@ -17,6 +17,7 @@ struct ChallengeListView: View {
         }) {
             List(viewModel.challenges){ challenge in
                 Text(challenge.title)
+                    .font(.custom("SeoulNamsanB", size: 22))
             }.onAppear{
                 self.viewModel.fetchChallenges()
             }

@@ -13,6 +13,7 @@ struct ChallengeFavorRow : View{
     var body: some View{
         HStack{
             Text(challenge.title)
+                .font(.custom("SeoulNamsanB", size: 22))
             Spacer()
 //            Image(systemName: challenge.isFavorite ? "star.fill" : "star")
 //                .resizable()

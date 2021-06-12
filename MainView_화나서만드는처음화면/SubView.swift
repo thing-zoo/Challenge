@@ -50,7 +50,7 @@ struct EnvelopeView:View {
     }
     var body: some View{
         VStack{
-            Text("오늘의 챌린지가 도착했습니다.")
+            Text("오늘의 챌린지가 도착했습니다.").font(.custom("SeoulNamsanB", size: 20))
             Button(action:{viewModel.firstClick()}){
                 ButtonBack()
             }
@@ -82,9 +82,10 @@ struct EnvelopeOpenView: View {
             VStack{
                 ZStack{
                     Text(content)
-                        .font(Font.largeTitle)
+                        .font(.custom("SeoulNamsanB", size: 35))
+//                        .font(Font.largeTitle)
                         .padding(30)
-                        .offset(x: 0.0, y: width*0.1)
+                        .offset(x: 0.0, y: width*0.2)
                         
                     
                     if complete{
@@ -92,7 +93,7 @@ struct EnvelopeOpenView: View {
                             .resizable()
                             .frame(width: width*0.3, height: width*0.3)
                             .opacity(0.9)
-                            .offset(x: 0, y: width*0.1)
+                            .offset(x: 0, y: width*0.2)
                     }
                     
                 }
@@ -104,20 +105,23 @@ struct EnvelopeOpenView: View {
                             viewModel.addFavorChallenges(title: content)
                         }
                     }, label: {
-                        HStack{
+                        VStack{
                             Text("즐겨찾기")
                             Image(systemName: addFavor ? "star.fill" : "star")
                         }
                     })
-                    
+                    .padding()
                     
                     Button(action: {
                         self.complete = true
                     }, label: {
                         Text("완료하기")
                     })
+                    .padding()
                 }
+                .font(.custom("SeoulNamsanB", size: 20))
                 .minimumScaleFactor(0.5)
+                .offset(x: 0.0, y: width*0.1)
             }
             .navigationTitle("일상챌린지")
             .navigationBarTitle("Back")

@@ -28,6 +28,7 @@ struct NewChallengeView: View{
         VStack{
             Spacer()
             TextField("Enter Name", text:$title)
+                .font(.custom("SeoulNamsanB", size: 20))
             Spacer()
             HStack {
                 Button(action: {
@@ -55,6 +56,7 @@ struct NewChallengeView: View{
                 .background(addButtonColor)
                 .disabled(isAddButtonDisabled)
             }
+            .font(.custom("SeoulNamsanB", size: 20))
         }
         .padding()
         .padding(.bottom, keyboard.currentHeight)
