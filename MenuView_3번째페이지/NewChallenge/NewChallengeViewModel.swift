@@ -24,10 +24,10 @@ final class NewChallengeViewModel: ObservableObject{
 extension NewChallengeViewModel: NewChallengeViewModelProtocol{
     func addNewChallenge(title: String) {
         //let challenge = Challenge(id: UUID(), title: title, isFavorite: Bool)
-        dataManager.addChallenge(title: title, isFavorite: false)
+        dataManager.addChallenge(title: title, status: 1)
     }
     func addNewChallengeInFavor(title: String) {
         //let challenge = Challenge(id: UUID(), title: title, isFavorite: Bool)
-        dataManager.addChallenge(title: title, isFavorite: true)
+        dataManager.addChallenge(title: title, status: 2)
     }
 }

@@ -22,7 +22,7 @@ final class ChallengeFavorListViewModel: ObservableObject{
 
 extension ChallengeFavorListViewModel: ChallengeListViewModelProtocol{
     func fetchChallenges() {
-        challenges = dataManager.fetchChallengeList(includingFavorite: showFavorite)
+        challenges = dataManager.fetchChallengeList(status: 2)
     }
     
     func toggleIsFavorite(for challenge: Challenge) {

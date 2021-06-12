@@ -36,7 +36,7 @@ class MainViewModel: ObservableObject {
         model.firstClick()
     }
     func addFavorChallenges(title: String){
-        dataManager.addChallenge(title: title, isFavorite: true)
+        dataManager.addChallenge(title: title, status: 2)
     }
 
 }
