@@ -9,12 +9,20 @@ import SwiftUI
 
 struct ChallengeListView: View {
     @ObservedObject var viewModel = ChallengeListViewModel()
-
+    @State private var isShowingSet = false
+    
     var body: some View{
-        List(viewModel.challenges){ challenge in
-            Text(challenge.title)
-        }.onAppear{
-            self.viewModel.fetchChallenges()
+        Button(action: {
+            isShowingSet = true
+        }) {
+            List(viewModel.challenges){ challenge in
+                Text(challenge.title)
+            }.onAppear{
+                self.viewModel.fetchChallenges()
+            }
+        }
+        .sheet(isPresented: $isShowingSet) {
+            //
         }
     }
 }

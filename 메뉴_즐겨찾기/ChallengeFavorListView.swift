@@ -23,7 +23,9 @@ struct ChallengeFavorListView: View {
     var body: some View {
         List(viewModel.challenges){ challenge in
             Button(action: {
-                isShowingSet = true
+                if challenge.alert == false {
+                    isShowingSet = true
+                }
             }) {
                 HStack{
                     ChallengeFavorRow(challenge: challenge)

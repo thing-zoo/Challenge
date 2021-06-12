@@ -1,5 +1,5 @@
 //
-//  SetFavoriteView.swift
+//  SetChallengeView.swift
 //  Challenge
 //
 //  Created by thingzoo on 2021/06/12.
@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct SetFavoriteView: View {
-    @ObservedObject var viewModel = ChallengeFavorListViewModel()
+struct SetChallengeView: View {
+    @ObservedObject var viewModel = ChallengeListViewModel()
     var challenge: Challenge
-    var begin = Date()
-    @State private var endDate = Date()
     @State private var alertTime = Date()
     @Binding var isShowingSet: Bool
     
@@ -30,10 +28,8 @@ struct SetFavoriteView: View {
     var body: some View {
         NavigationView {
             Form {
-                DatePicker("기간 선택", selection: $endDate, displayedComponents: .date)
-                    .datePickerStyle(WheelDatePickerStyle())
-                
                 DatePicker("알림 시간 선택", selection: $alertTime, displayedComponents: .hourAndMinute)
+                    .datePickerStyle(WheelDatePickerStyle())
                 
             }
             .navigationTitle("챌린지 설정")
@@ -43,7 +39,6 @@ struct SetFavoriteView: View {
     
     var save: some View {
         Button("저장") {
-            viewModel.setDate(for: challenge, begin: begin, end: endDate)
             let (h, m) = whatTime(date: alertTime)
 //            print("\(h) \(m)")
             self.setNotification(title: challenge.title, hour: h, minute: m)

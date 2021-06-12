@@ -29,7 +29,7 @@ extension ChallengeFavorListViewModel: ChallengeListViewModelProtocol{
         dataManager.toggleIsFavorite(for: challenge)
         fetchChallenges()
     }
-    func setDate(for challenge: Challenge, begin: Date, end: Date, alert: Date) {
-        dataManager.setDate(for: challenge, begin: begin, end: end, alert: alert)
+    func setDate(for challenge: Challenge, begin: Date, end: Date) {
+        dataManager.setDate(for: challenge, begin: begin, end: end)
     }
 }
