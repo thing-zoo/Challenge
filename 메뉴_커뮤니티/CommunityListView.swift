@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CommunityListView: View {
-//    let items = Array(1...1000).map({"Element \($0)"})
     let images : [Image] = [
-        Image("good"), Image("good")
+        Image("good"), Image("good"),Image("lara"),Image("lara")
     ]
     
     var body: some View {
@@ -19,14 +18,15 @@ struct CommunityListView: View {
             GridItem(.adaptive(minimum: width))
         ]
         ScrollView{
-                    LazyVGrid(columns: layout, content: {
-                        ForEach(0..<images.count) { imageIdx in
-                                   images[imageIdx]
-                                   .resizable()
-                                   .frame(width: width, height: width, alignment: .center)
-                                }
-                    })
+            LazyVGrid(columns: layout, content: {
+                ForEach(0..<images.count) { imageIdx in
+                   images[imageIdx]
+                   .resizable()
+                   .frame(width: width, height: width, alignment: .center)
+                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                 }
+            })
+        }
     }
 }
 

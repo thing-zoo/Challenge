@@ -14,7 +14,8 @@ struct SlideMenuView: View {
             List {
                 NavigationLink("즐겨찾기", destination: ChallengeFavorListView().navigationTitle("즐겨찾기"))
                 NavigationLink("챌린지 리스트", destination: ChallengeListView().navigationTitle("챌린지 리스트"))
-                NavigationLink("커뮤니티", destination: Text("커뮤니티"))
+                NavigationLink("커뮤니티", destination:
+                    CommunityListView().navigationTitle("커뮤니티"))
                 
             }//.navigationTitle("Back")
             /*

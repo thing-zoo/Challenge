@@ -6,7 +6,6 @@
 	<array>
 		<string>SeoulNamsanB.ttf</string>
 		<string>OSeongandHanEum-Bold.ttf</string>
-		<string>해남체.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
