@@ -9,21 +9,13 @@ import SwiftUI
 
 struct ChallengeListView: View {
     @ObservedObject var viewModel = ChallengeListViewModel()
-    @State private var isShowingSet = false
     
     var body: some View{
-        Button(action: {
-            isShowingSet = true
-        }) {
-            List(viewModel.challenges){ challenge in
-                Text(challenge.title)
-                    .font(.custom("SeoulNamsanB", size: 22))
-            }.onAppear{
-                self.viewModel.fetchChallenges()
-            }
-        }
-        .sheet(isPresented: $isShowingSet) {
-            //
+        List(viewModel.challenges){ challenge in
+            Text(challenge.title)
+                .font(.custom("SeoulNamsanB", size: 22))
+        }.onAppear{
+            self.viewModel.fetchChallenges()
         }
     }
 }

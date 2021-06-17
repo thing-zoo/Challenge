@@ -23,8 +23,7 @@ struct SetFavoriteView: View {
     func setNotification(title: String, hour: Int, minute: Int) {
         let manager = LocalNotificationManager()
         manager.requestPermission()
-        manager.addNotification(title: title+"할 시간이에요~!")
-        manager.scheduleNotifications(hour: hour, minute: minute)
+        manager.addNotification(title: title+"할 시간이에요~!", hour: hour, minute: minute)
     }
     
     var body: some View {

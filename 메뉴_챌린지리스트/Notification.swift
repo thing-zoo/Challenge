@@ -26,22 +26,27 @@ class LocalNotificationManager {
         }
     }
     
-//    func addNotification(title: String, hour: Int, minute: Int) -> Void {
-//        let note = Note(id: UUID().uuidString, title: title)
-//        let content = UNMutableNotificationContent()
-//        content.title = note.title
+    func addNotification(title: String, hour: Int, minute: Int) -> Void {
+        let note = Note(id: UUID().uuidString, title: title)
+        let content = UNMutableNotificationContent()
+        content.title = note.title
+
+        var date = DateComponents()
+        date.hour = hour
+        date.minute = minute
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let request = UNNotificationRequest(identifier: note.id, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+            guard error == nil else { return }
+            print("Scheduling notification with id: \(note.id)")
+        }
+        notifications.append(note)
+    }
+
 //
-//        var date = DateComponents()
-//        date.hour = hour
-//        date.minute = minute
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-//        let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
-//
-//        UNUserNotificationCenter.current().add(request) { error in
-//            guard error == nil else { return }
-//            print("Scheduling notification with id: \(notification.id)")
-//        }
-//        notifications.append(note)
+//    func addNotification(title: String) -> Void {
+//            notifications.append(Note(id: UUID().uuidString, title: title))
 //    }
 //
 //    func scheduleNotifications(hour: Int, minute: Int) -> Void {
@@ -61,25 +66,4 @@ class LocalNotificationManager {
 //            }
 //        }
 //    }
-    func addNotification(title: String) -> Void {
-            notifications.append(Note(id: UUID().uuidString, title: title))
-    }
-
-    func scheduleNotifications(hour: Int, minute: Int) -> Void {
-        for notification in notifications {
-            let content = UNMutableNotificationContent()
-            content.title = notification.title
-
-            var date = DateComponents()
-            date.hour = hour
-            date.minute = minute
-            let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
-
-            UNUserNotificationCenter.current().add(request) { error in
-                guard error == nil else { return }
-                print("Scheduling notification with id: \(notification.id)")
-            }
-        }
-    }
 }

@@ -35,7 +35,6 @@
 		F419C81C26747B3900843DE4 /* SetFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81B26747B3900843DE4 /* SetFavoriteView.swift */; };
 		F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */; };
 		F4BCF4F4266F95DF001B4B98 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */; };
-		F4E4DA2C267504A50090FD03 /* SetChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4DA2A267504A50090FD03 /* SetChallengeView.swift */; };
 		F4E4DA2D267504A50090FD03 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4DA2B267504A50090FD03 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		F419C81B26747B3900843DE4 /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
-		F4E4DA2A267504A50090FD03 /* SetChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetChallengeView.swift; sourceTree = "<group>"; };
 		F4E4DA2B267504A50090FD03 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F6787117F09AFA769CAB15A6 /* Pods_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,7 +154,6 @@
 				2DBE3CAB266F903000A12E71 /* ChallengeListViewModel.swift */,
 				2DBE3CAC266F903000A12E71 /* ChallengeListView.swift */,
 				F4E4DA2B267504A50090FD03 /* Notification.swift */,
-				F4E4DA2A267504A50090FD03 /* SetChallengeView.swift */,
 			);
 			path = "메뉴_챌린지리스트";
 			sourceTree = "<group>";
@@ -382,7 +379,6 @@
 				2DBE3CC3266F903700A12E71 /* MockDataManager.swift in Sources */,
 				2DBE3CC7266F903700A12E71 /* NewChallengeViewModel.swift in Sources */,
 				2DBE3CC5266F903700A12E71 /* KeyboardResponder.swift in Sources */,
-				F4E4DA2C267504A50090FD03 /* SetChallengeView.swift in Sources */,
 				2DBE3CB3266F903300A12E71 /* ChallengeFavorListView.swift in Sources */,
 				2DBE3C45266F8DB700A12E71 /* AppDelegate.swift in Sources */,
 				F419C81A26746FB100843DE4 /* SubView.swift in Sources */,
