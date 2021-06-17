@@ -13,20 +13,25 @@ class selectUserDate : ObservableObject {
 }
 
 struct CalendarView: View {
-//    @ObservedObject var select: selectUserDate
+    //    @ObservedObject var select: selectUserDate
     var selectDate: Date = Date()
     
     @ObservedObject var viewModel = ChallengeListViewModel()
     @State var date_challenge : [Challenge]?
-//    var calendar_model = CalendarModel(selectedDate: $userData.date)
+    //    var calendar_model = CalendarModel(selectedDate: $userData.date)
     var body : some View {
-        VStack {
-            CalendarModel(date_challenge: $date_challenge)
-            HStack{
-                //List 삽입
-                List(date_challenge ?? viewModel.challenges){ challenge in
-                    Text(challenge.title)
-                }
+        GeometryReader { gp in
+            VStack {
+                CalendarModel(date_challenge: $date_challenge)
+                    .frame(width: gp.size.width, height: gp.size.height*0.62)
+                HStack{
+                    List(date_challenge ?? viewModel.challenges) { challenges in
+                        NavigationLink(
+                            destination: DetailChallenge(challenge: challenges)){
+                            Text(challenges.title)
+                        }
+                    }
+                }.frame(width: gp.size.width, height: gp.size.height*0.38)
             }
         }
     }
@@ -35,6 +40,25 @@ struct CalendarView: View {
         date_challenge = [Challenge]()
     }
     
+}
+
+struct DetailChallenge : View {
+    let challenge : Challenge
+    let dateformat = DateFormatter()
+    var body: some View {
+        VStack(spacing: 30){
+            Text("\(challenge.title)")
+            HStack{
+                Text("기간")
+                Text("\(dateformat.string(from: challenge.beginDate)) ~ \(dateformat.string(from: challenge.endDate))")
+            }
+        }
+    }
+    
+    init(challenge : Challenge){
+        self.challenge = challenge
+        dateformat.dateFormat = "yyyy-MM-dd"
+    }
 }
 
 struct CalendarView_Previews: PreviewProvider {

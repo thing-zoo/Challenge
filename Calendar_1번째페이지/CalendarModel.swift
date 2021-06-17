@@ -17,9 +17,9 @@ struct CalendarModel: UIViewRepresentable {
       func makeUIView(context: Context) -> FSCalendar {
         let calendar = FSCalendar()
         calendar.appearance.weekdayTextColor = UIColor.orange
-        calendar.appearance.headerTitleColor = UIColor.red
+        calendar.appearance.headerTitleColor = UIColor.systemBlue
         calendar.appearance.titleWeekendColor = UIColor.red
-        calendar.scrollDirection = .vertical
+        calendar.scrollDirection = .horizontal
         
         calendar.delegate = context.coordinator
         calendar.dataSource = context.coordinator
@@ -42,18 +42,55 @@ struct CalendarModel: UIViewRepresentable {
 //            self.parent.selectedDate = date
             self.parent.date_challenge = [Challenge]()
             
-            print("touch calendar")
+//            print("touch calendar")
             let calendar = Calendar.current
+            let beginDate_format = DateFormatter()
+            beginDate_format.dateFormat = "yyyy-MM-dd"
+
+            let selectDate = calendar.date(byAdding: .hour, value : 9, to: date)! // 캘린더 선택 날짜를 0시로 다시 조정.
+            // ex) 2021-06-13 선택 시 )) 2021-06-12 15:00:00 -> 2021-06-13 00:00:00
+            print("\(selectDate)")
+            
             for challenge in viewModel.challenges {
-                let sel_start = calendar.dateComponents([.day], from: challenge.beginDate, to: date).day!
-                let finish_sel = calendar.dateComponents([.day], from: date, to: challenge.endDate).day!
-                if(sel_start >= 0 && finish_sel >= 0){ // 선택 날짜가 챌린지의 기간 안에 있는 지 확인.
+                let sel_start = calendar.dateComponents([.day], from: challenge.beginDate, to: selectDate).day!
+                let finish_sel = calendar.dateComponents([.day], from: selectDate, to: challenge.endDate).day!
+                
+                let begin = calendar.date(byAdding: .hour, value: 9, to:challenge.beginDate)!
+                let end = calendar.date(byAdding: .hour, value: 9, to: challenge.endDate)!
+                
+                let sel_start_2 = calendar.dateComponents([.day], from: begin, to: selectDate).day!
+                let finish_sel_2 = calendar.dateComponents([.day], from: selectDate, to: end).day!
+                
+                print("sel_start : \(sel_start_2), finish_sel : \(finish_sel_2)")
+                
+                // 시작 날짜가 선택 날짜보다 이르거나 같아야 하며, 끝 날짜가 선택 날짜보다 늦거나 같아야 한다.
+                
+                /*
+                if(sel_start_2 >= 0 && finish_sel_2 >= 0){  // 선택 날짜가 챌린지의 기간 안에 있는 지 확인.
+                    self.parent.date_challenge!.append(challenge)
+                }*/
+                
+                // 18 ~
+//                if(calendar.date(byAdding: .day, value: 1, to: date)! >= challenge.beginDate){
+//                    self.parent.date_challenge!.append(challenge)
+//                }
+                // ~ 18
+//                if(date <= challenge.endDate){
+//                    self.parent.date_challenge!.append(challenge)
+//                }
+                
+                if(calendar.date(byAdding: .day, value: 1, to: date)! >= challenge.beginDate && date <= challenge.endDate){
                     self.parent.date_challenge!.append(challenge)
                 }
+                
+//                if(begin >= 0 && end >= 0){
+//                    self.parent.date_challenge!.append(challenge)
+//                }
             }
             
             for challenge in selectDate_challenge {
                 print("\(challenge.title)")}
+            
             /*
             let calendar = Calendar.current
             let selectFormatter = DateFormatter()
@@ -82,9 +119,9 @@ struct CalendarModel: UIViewRepresentable {
             for challenge in selectDate_challenge {
                 print("\(challenge.title)")} */
             //objectWillChange.send()
+            }
         }
-        
-    }
+    
 
       func makeCoordinator() -> Coordinator {
         Coordinator(self)
