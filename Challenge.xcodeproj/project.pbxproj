@@ -36,6 +36,7 @@
 		F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */; };
 		F4BCF4F4266F95DF001B4B98 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */; };
 		F4E4DA2D267504A50090FD03 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4DA2B267504A50090FD03 /* Notification.swift */; };
+		F4EC8EE3267BAF75005CFE1A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC8EE2267BAF75005CFE1A /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		F4E4DA2B267504A50090FD03 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		F4EC8EE2267BAF75005CFE1A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F6787117F09AFA769CAB15A6 /* Pods_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 		2DBE3C38266F8DB700A12E71 = {
 			isa = PBXGroup;
 			children = (
+				F4EC8EE1267BAF4C005CFE1A /* Splash Screen */,
 				F4BCF4F0266F95DF001B4B98 /* Calendar_1번째페이지 */,
 				2DBE3CB6266F903700A12E71 /* MenuView_3번째페이지 */,
 				F419C81226746FB100843DE4 /* MainView_화나서만드는처음화면 */,
@@ -253,6 +256,14 @@
 			path = "Calendar_1번째페이지";
 			sourceTree = "<group>";
 		};
+		F4EC8EE1267BAF4C005CFE1A /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F4EC8EE2267BAF75005CFE1A /* SplashView.swift */,
+			);
+			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,6 +397,7 @@
 				2DBE3CAD266F903000A12E71 /* ChallengeListViewModel.swift in Sources */,
 				2DBE3CCA266F903700A12E71 /* MenuView.swift in Sources */,
 				2DBE3CC9266F903700A12E71 /* ChallengeFavorRow.swift in Sources */,
+				F4EC8EE3267BAF75005CFE1A /* SplashView.swift in Sources */,
 				2DBE3C47266F8DB700A12E71 /* SceneDelegate.swift in Sources */,
 				2DBE3CA8266F902900A12E71 /* CommunityListView.swift in Sources */,
 				F4E4DA2D267504A50090FD03 /* Notification.swift in Sources */,
