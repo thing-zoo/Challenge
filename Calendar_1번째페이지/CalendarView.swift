@@ -8,17 +8,12 @@
 
 import SwiftUI
 
-class selectUserDate : ObservableObject {
-    @Published var selectDate: Date = Date()
-}
-
 struct CalendarView: View {
-    //    @ObservedObject var select: selectUserDate
     var selectDate: Date = Date()
     
     @ObservedObject var viewModel = ChallengeListViewModel()
     @State var date_challenge : [Challenge]?
-    //    var calendar_model = CalendarModel(selectedDate: $userData.date)
+
     var body : some View {
         GeometryReader { gp in
             VStack {
