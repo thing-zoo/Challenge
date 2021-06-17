@@ -21,7 +21,7 @@ final class KeyboardResponder: KeyboardResponderProtocol, ObservableObject {
     init() {
         let keyboardWillShow = NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
         let keyboardWillHide = NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)
-        _ = Publishers.Merge(keyboardWillShow, keyboardWillHide)
+        let _ = Publishers.Merge(keyboardWillShow, keyboardWillHide)
             .receive(on: RunLoop.main)
             .sink { [weak self] in self?.keyboardNotification($0) }
             .store(in: &cancellableBag)
