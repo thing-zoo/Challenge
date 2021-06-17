@@ -66,9 +66,28 @@ struct EnvelopeOpenView: View {
     var viewModel: MainViewModel
     @State private var complete = false
     @State private var addFavor = false
+    @State private var upload = false
+    
+    var savedChall: String?
+    var savedFavor: String?
 
     init(_ viewModel: MainViewModel){
         self.viewModel = viewModel
+        self.savedChall = UserDefaults.standard.value(forKey: "completeChall") as? String
+        if self.viewModel.isInfavorList() == true {
+            setAddFavor()
+        }
+    }
+    
+    func setAddFavor() {
+        self.addFavor = true
+    }
+    
+    func checkComplete() -> Bool {
+        if savedChall == "true" || complete == true {
+            return true
+        }
+        return false
     }
 
     var body: some View{
@@ -89,7 +108,7 @@ struct EnvelopeOpenView: View {
                         .offset(x: 0.0, y: width*0.2)
                         
                     
-                    if complete{
+                    if checkComplete() {
                         Image("good")
                             .resizable()
                             .frame(width: width*0.3, height: width*0.3)
@@ -104,6 +123,7 @@ struct EnvelopeOpenView: View {
                         if !addFavor{
                             self.addFavor = true
                             viewModel.addFavorChallenges(title: content)
+                            UserDefaults.standard.setValue(String(self.addFavor), forKey: "favorChall")
                         }
                     }, label: {
                         VStack{
@@ -113,22 +133,78 @@ struct EnvelopeOpenView: View {
                     })
                     .padding()
                     
-                    Button(action: {
-                        self.complete = true
-                    }, label: {
-                        Text("완료하기")
-                    })
-                    .padding()
+                    if upload == false {
+                        Button(action: {
+                            self.complete = true
+                            UserDefaults.standard.setValue(String(self.complete), forKey: "completeChall")
+                        }, label: {
+                            Text("인증하기")
+                        })
+                        .sheet(isPresented: $complete) {
+                            ImagePicker(sourceType: .photoLibrary) { image in
+                                self.viewModel.setCertificate(CommunityElement(image, title: content))
+                                self.upload = true // 이제 포토 보여줘
+                            }
+                        }
+                        .padding()
+                    } else {
+                        Button(action: {
+                            self.complete = true
+                            UserDefaults.standard.setValue(String(self.complete), forKey: "completeChall")
+                        }, label: {
+                            Text("인증완료")
+                        })
+                        .sheet(isPresented: $complete) {
+                            sheetView(self.viewModel.getCertificate())
+                                .navigationTitle("인증완료")
+                        }
+                        .padding()
+                    }
+                    
                 }
                 .font(.custom("SeoulNamsanB", size: 20))
                 .minimumScaleFactor(0.5)
                 .offset(x: 0.0, y: width*0.1)
             }
-            .navigationTitle("일상챌린지")
-            .navigationBarTitle("Back")
             .padding()
         }
         
+    }
+}
+
+struct sheetView: View{
+    var certificate: CommunityElement
+    
+    init(_ element: CommunityElement){
+        self.certificate = element
+    }
+    
+    var body: some View {
+        
+        NavigationView{
+            VStack{
+                /*VStack(){
+                    Image(systemName: "chevron.compact.down")
+                        //.frame(minWidth: 0, maxWidth: .infinity, alignment: .top)
+                    Image(systemName: "chevron.compact.down")
+                        //.frame(minWidth: 0, maxWidth: .infinity, alignment: .top)
+                }
+                
+                    
+                })
+                .foregroundColor(.blue)*/
+                Image(uiImage: certificate.getImage()!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:300, height: 300)
+                    .padding()
+                
+                Text(certificate.getTitle())
+                    .frame(width: 300, height: 50)
+                    .padding()
+            }
+            .navigationBarTitle(Text("인증완료"), displayMode: .inline)
+        }
     }
 }
 

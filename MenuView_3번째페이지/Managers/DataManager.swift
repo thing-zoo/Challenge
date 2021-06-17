@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol DataManagerProtocol {
     func fetchChallengeList(status:Int) -> [Challenge]
@@ -20,6 +21,7 @@ class DataManager {
 //    private var challenges = [Challenge]()
     private var beingChallenges = [Challenge]()
     private var favorChallenges = [Challenge]()
+    private var communityList = [CommunityElement]()
 
     private init() {
         //실행시 데이터가 나타나는 것을 보고 싶다면 주석 처리 지울것
@@ -72,5 +74,9 @@ extension DataManager: DataManagerProtocol {
     func setDate(for challenge: Challenge, begin: Date, end: Date) {
         let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end)
         addChallenge(challenge: ch)
+    }
+    
+    func addCommunity(_ image: UIImage?, title: String) {
+        self.communityList.append(CommunityElement(image, title: title))
     }
 }

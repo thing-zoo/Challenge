@@ -31,8 +31,10 @@
 		F419C81726746FB100843DE4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81326746FB100843DE4 /* MainViewModel.swift */; };
 		F419C81826746FB100843DE4 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81426746FB100843DE4 /* MainModel.swift */; };
 		F419C81926746FB100843DE4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81526746FB100843DE4 /* MainView.swift */; };
-		F419C81A26746FB100843DE4 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81626746FB100843DE4 /* SubView.swift */; };
 		F419C81C26747B3900843DE4 /* SetFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F419C81B26747B3900843DE4 /* SetFavoriteView.swift */; };
+		F462C153267BCFFE003B3DEC /* CommunityElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462C152267BCFFE003B3DEC /* CommunityElement.swift */; };
+		F462C155267BD08A003B3DEC /* lmagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462C154267BD08A003B3DEC /* lmagePicker.swift */; };
+		F462C158267BD10F003B3DEC /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462C157267BD10F003B3DEC /* SubView.swift */; };
 		F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */; };
 		F4BCF4F4266F95DF001B4B98 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */; };
 		F4E4DA2D267504A50090FD03 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4DA2B267504A50090FD03 /* Notification.swift */; };
@@ -67,8 +69,10 @@
 		F419C81326746FB100843DE4 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F419C81426746FB100843DE4 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		F419C81526746FB100843DE4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		F419C81626746FB100843DE4 /* SubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		F419C81B26747B3900843DE4 /* SetFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteView.swift; sourceTree = "<group>"; };
+		F462C152267BCFFE003B3DEC /* CommunityElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityElement.swift; sourceTree = "<group>"; };
+		F462C154267BD08A003B3DEC /* lmagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lmagePicker.swift; sourceTree = "<group>"; };
+		F462C157267BD10F003B3DEC /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		F4BCF4F1266F95DF001B4B98 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		F4BCF4F2266F95DF001B4B98 /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		F4E4DA2B267504A50090FD03 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			children = (
 				2DBE3CC0266F903700A12E71 /* Challenge.swift */,
 				2DBE3CC1266F903700A12E71 /* ChallengeFavorRow.swift */,
+				F462C152267BCFFE003B3DEC /* CommunityElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,12 +244,21 @@
 		F419C81226746FB100843DE4 /* MainView_화나서만드는처음화면 */ = {
 			isa = PBXGroup;
 			children = (
+				F462C156267BD0D6003B3DEC /* Model */,
 				F419C81326746FB100843DE4 /* MainViewModel.swift */,
-				F419C81426746FB100843DE4 /* MainModel.swift */,
 				F419C81526746FB100843DE4 /* MainView.swift */,
-				F419C81626746FB100843DE4 /* SubView.swift */,
+				F462C157267BD10F003B3DEC /* SubView.swift */,
 			);
 			path = "MainView_화나서만드는처음화면";
+			sourceTree = "<group>";
+		};
+		F462C156267BD0D6003B3DEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F419C81426746FB100843DE4 /* MainModel.swift */,
+				F462C154267BD08A003B3DEC /* lmagePicker.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4BCF4F0266F95DF001B4B98 /* Calendar_1번째페이지 */ = {
@@ -380,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F462C153267BCFFE003B3DEC /* CommunityElement.swift in Sources */,
 				2DBE3CAE266F903000A12E71 /* ChallengeListView.swift in Sources */,
 				F419C81926746FB100843DE4 /* MainView.swift in Sources */,
 				F4BCF4F3266F95DF001B4B98 /* CalendarView.swift in Sources */,
@@ -390,9 +405,10 @@
 				2DBE3CC3266F903700A12E71 /* MockDataManager.swift in Sources */,
 				2DBE3CC7266F903700A12E71 /* NewChallengeViewModel.swift in Sources */,
 				2DBE3CC5266F903700A12E71 /* KeyboardResponder.swift in Sources */,
+				F462C158267BD10F003B3DEC /* SubView.swift in Sources */,
 				2DBE3CB3266F903300A12E71 /* ChallengeFavorListView.swift in Sources */,
 				2DBE3C45266F8DB700A12E71 /* AppDelegate.swift in Sources */,
-				F419C81A26746FB100843DE4 /* SubView.swift in Sources */,
+				F462C155267BD08A003B3DEC /* lmagePicker.swift in Sources */,
 				2DBE3CC8266F903700A12E71 /* Challenge.swift in Sources */,
 				2DBE3CAD266F903000A12E71 /* ChallengeListViewModel.swift in Sources */,
 				2DBE3CCA266F903700A12E71 /* MenuView.swift in Sources */,

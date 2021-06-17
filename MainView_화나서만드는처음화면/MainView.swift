@@ -49,8 +49,8 @@ struct MainView: View {
                 }
                 
             }
-            .navigationBarTitle("Side Menu", displayMode: .inline)
-            .navigationBarItems(leading: calButton(destination: CalendarView()), trailing: (Button(action: {
+            .navigationBarTitle("일상챌린지", displayMode: .inline)
+            .navigationBarItems(leading: calButton(show: self.$showMenu, destination: CalendarView()), trailing: (Button(action: {
                 withAnimation {
                     self.showMenu.toggle()
                 }
@@ -63,9 +63,26 @@ struct MainView: View {
 }
 
 struct calButton<Destination: View>: View {
+    @Binding var show: Bool
     var destination: Destination
+    @State var isActive: Bool = false
+    
+    init(show: Binding<Bool>, destination: Destination){
+        _show = show
+        self.destination = destination
+    }
+    
     var body: some View {
-        NavigationLink(destination: self.destination) { Image(systemName: "calendar") }
+        NavigationLink(destination: self.destination, isActive: self.$isActive) {
+            Button(action:{
+                self.isActive = true
+                self.show = false
+            }){
+                Image(systemName: "calendar")
+            }
+           
+                
+        }
     }
 }
 

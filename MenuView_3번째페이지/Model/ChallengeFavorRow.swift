@@ -25,7 +25,7 @@ struct ChallengeFavorRow : View{
 
 struct ChallengeFavorRow_Previews: PreviewProvider{
     static var previews: some View{
-        Group { 
+        Group {
             ChallengeFavorRow(challenge: Challenge(title: "하늘 사진 찍기"))
             ChallengeFavorRow(challenge: Challenge(title: "거울보고 웃기"))
         }
