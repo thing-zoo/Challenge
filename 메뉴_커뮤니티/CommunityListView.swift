@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct CommunityListView: View {
-    let images : [Image] = [
-        Image("good"), Image("good"),Image("lara"),Image("lara")
-    ]
+    var viewModel: MainViewModel
+    var Community: [CommunityElement]
+    @State var click: Bool = false
+    
+    init(viewModel: MainViewModel){
+        self.viewModel = viewModel
+        self.Community = viewModel.dataManager.fetchCommunityList()
+    }
     
     var body: some View {
         let width = UIScreen.main.bounds.width/4
@@ -19,11 +24,22 @@ struct CommunityListView: View {
         ]
         ScrollView{
             LazyVGrid(columns: layout, content: {
-                ForEach(0..<images.count) { imageIdx in
-                   images[imageIdx]
-                   .resizable()
-                   .frame(width: width, height: width, alignment: .center)
-                    .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                ForEach(0..<Community.count) { index in
+                    let element = Community[index]
+                    //let image = element.getImage()
+                    //let content = element.getTitle()
+                    let imageElement = Image(uiImage: element.getImage()!)
+                    Button(action:{
+                        self.click = true
+                    }){
+                        imageElement
+                            .resizable()
+                            .frame(width: width, height: width, alignment: .center)
+                            //.border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                    }.sheet(isPresented: self.$click, content: {
+                        sheetView(Community[index], text: "인증기록")
+                            .navigationBarTitle(Text("인증기록"), displayMode: .inline)
+                    })
                 }
             })
         }
@@ -32,6 +48,6 @@ struct CommunityListView: View {
 
 struct CommunityListView_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityListView()
+        CommunityListView(viewModel: MainViewModel())
     }
 }

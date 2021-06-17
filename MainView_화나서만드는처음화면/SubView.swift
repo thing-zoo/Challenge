@@ -9,13 +9,19 @@ import SwiftUI
 
 struct SlideMenuView: View {
     
+    var viewModel: MainViewModel
+    
+    init(viewModel: MainViewModel){
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         //VStack(alignment: .leading) {
             List {
                 NavigationLink("즐겨찾기", destination: ChallengeFavorListView().navigationTitle("즐겨찾기"))
                 NavigationLink("챌린지 리스트", destination: ChallengeListView().navigationTitle("챌린지 리스트"))
                 NavigationLink("커뮤니티", destination:
-                    CommunityListView().navigationTitle("커뮤니티"))
+                                CommunityListView(viewModel: self.viewModel).navigationTitle("커뮤니티"))
                 
             }//.navigationTitle("Back")
             /*
@@ -142,8 +148,14 @@ struct EnvelopeOpenView: View {
                         })
                         .sheet(isPresented: $complete) {
                             ImagePicker(sourceType: .photoLibrary) { image in
-                                self.viewModel.setCertificate(CommunityElement(image, title: content))
+                                let element = CommunityElement(image, title: content);
+                                self.viewModel.setCertificate(element) // 오늘의 챌린지 인증완료
                                 self.upload = true // 이제 포토 보여줘
+                                
+                                // 커뮤니티에 업로드
+                                self.viewModel.addCommunity(element: element)
+                                
+                                
                             }
                         }
                         .padding()
@@ -155,8 +167,7 @@ struct EnvelopeOpenView: View {
                             Text("인증완료")
                         })
                         .sheet(isPresented: $complete) {
-                            sheetView(self.viewModel.getCertificate())
-                                .navigationTitle("인증완료")
+                            sheetView(self.viewModel.getCertificate(), text: "인증완료")
                         }
                         .padding()
                     }
@@ -174,9 +185,11 @@ struct EnvelopeOpenView: View {
 
 struct sheetView: View{
     var certificate: CommunityElement
+    var content: String
     
-    init(_ element: CommunityElement){
+    init(_ element: CommunityElement, text: String){
         self.certificate = element
+        self.content = text
     }
     
     var body: some View {
@@ -203,8 +216,9 @@ struct sheetView: View{
                     .frame(width: 300, height: 50)
                     .padding()
             }
-            .navigationBarTitle(Text("인증완료"), displayMode: .inline)
+            .navigationBarTitle(Text(content), displayMode: .inline)
         }
+        
     }
 }
 

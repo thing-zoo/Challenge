@@ -39,7 +39,7 @@ struct MainView: View {
                             .disabled(self.showMenu ? true : false)
                     }
                     if self.showMenu {
-                        SlideMenuView()
+                        SlideMenuView(viewModel: self.viewModel)
                             .navigationTitle("menu")
                             .gesture(drag)
                             .frame(width: geometry.size.width/2)

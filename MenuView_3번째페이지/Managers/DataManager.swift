@@ -13,6 +13,8 @@ protocol DataManagerProtocol {
     func addChallenge(title: String, status: Int)
     func toggleIsFavorite(for challenge: Challenge)
     func setDate(for challenge: Challenge, begin: Date, end: Date)
+    func addCommunity(element: CommunityElement)
+    func fetchCommunityList() -> [CommunityElement]
 }
 
 class DataManager {
@@ -38,6 +40,8 @@ class DataManager {
 
 // MARK: - DataManagerProtocol
 extension DataManager: DataManagerProtocol {
+    
+    
 
     func fetchChallengeList(status : Int) -> [Challenge] {
         switch(status){
@@ -76,7 +80,11 @@ extension DataManager: DataManagerProtocol {
         addChallenge(challenge: ch)
     }
     
-    func addCommunity(_ image: UIImage?, title: String) {
-        self.communityList.append(CommunityElement(image, title: title))
+    func addCommunity(element: CommunityElement) {
+        self.communityList.append(element)
+    }
+
+    func fetchCommunityList() -> [CommunityElement] {
+        return self.communityList
     }
 }

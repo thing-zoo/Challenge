@@ -21,11 +21,11 @@ class MainViewModel: ObservableObject {
         
         // viewModel 설정
         
-        //UserDefaults.standard.removeObject(forKey: "today")
-        //UserDefaults.standard.removeObject(forKey: "isClicked")
-        //UserDefaults.standard.removeObject(forKey: "completeChall")
-        //UserDefaults.standard.removeObject(forKey: "completeChall")
-        //UserDefaults.standard.removeObject(forKey: "faovrChall")
+        UserDefaults.standard.removeObject(forKey: "today")
+        UserDefaults.standard.removeObject(forKey: "isClicked")
+        UserDefaults.standard.removeObject(forKey: "completeChall")
+        UserDefaults.standard.removeObject(forKey: "completeChall")
+        UserDefaults.standard.removeObject(forKey: "faovrChall")
         
         let value = UserDefaults.standard.value(forKey: "isClicked") as? String
         //print(value)
@@ -52,6 +52,10 @@ class MainViewModel: ObservableObject {
             }
         }
         
+    }
+    
+    func addCommunity(element: CommunityElement) {
+        dataManager.addCommunity(element: element)
     }
     
     func isInfavorList() -> Bool{

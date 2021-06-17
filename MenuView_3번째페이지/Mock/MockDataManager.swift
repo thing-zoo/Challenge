@@ -33,6 +33,11 @@ class MockDataManager {
 
 // MARK: - DataManagerProtocol
 extension MockDataManager: DataManagerProtocol {
+    func fetchCommunityList() -> [CommunityElement] {
+        return [CommunityElement]()
+    }
+    
+    
     func fetchChallengeList(status : Int) -> [Challenge] {
         switch(status){
         case 1:
@@ -67,5 +72,9 @@ extension MockDataManager: DataManagerProtocol {
     func setDate(for challenge: Challenge, begin: Date, end: Date) {
         let ch = Challenge(id: challenge.id, title: challenge.title, beginDate: begin, endDate: end)
         addChallenge(challenge: ch)
+    }
+    
+    func addCommunity(element: CommunityElement) {
+        
     }
 }

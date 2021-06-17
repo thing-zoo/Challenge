@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
-    init() {
+    var viewModel: MainViewModel
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
         UINavigationBar.appearance().backgroundColor = UIColor(red: 0.2, green: 0.8, blue: 0.2, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
@@ -26,7 +28,7 @@ struct MenuView: View {
                     Text("즐겨찾기")
                 }
                 
-                NavigationLink(destination: CommunityListView().navigationBarTitle("커뮤니티")){
+                NavigationLink(destination: CommunityListView(viewModel: self.viewModel).navigationBarTitle("커뮤니티")){
                     Text("커뮤니티")
                 }
             }
@@ -37,6 +39,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(viewModel: MainViewModel())
     }
 }
